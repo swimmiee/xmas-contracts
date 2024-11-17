@@ -62,12 +62,14 @@ export async function deployContracts() {
 
   const g1 = await XmasNFT.setTreeConfig.estimateGas(XmasTreeAddr, XMASAddress);
   const t1 = await XmasNFT.setTreeConfig(XmasTreeAddr, XMASAddress, {
-    gasLimit: g1 * 5n,
+    // gasLimit: g1 * 5n,
   });
   await t1.wait();
 
   const g2 = await XMAS.setTree.estimateGas(XmasTreeAddr);
-  const t2 = await XMAS.setTree(XmasTreeAddr, { gasLimit: g2 * 5n });
+  const t2 = await XMAS.setTree(XmasTreeAddr, 
+    // { gasLimit: g2 * 5n }
+  );
   await t2.wait();
 
   return {

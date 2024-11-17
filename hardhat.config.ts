@@ -12,14 +12,21 @@ const config: HardhatUserConfig = {
   solidity: "0.8.27",
   networks: {
     hardhat: {
-      blockGasLimit: 300000000
+      blockGasLimit: 300000000,
     },
-    sepolia: {
-      url: "https://1rpc.io/sepolia",
+
+    polygon: {
+      url: "https://polygon.meowrpc.com",
       accounts: [pk1, pk2],
     },
+
     basesep: {
       url: "https://sepolia.base.org",
+      accounts: [pk1, pk2],
+    },
+
+    sepolia: {
+      url: "https://1rpc.io/sepolia",
       accounts: [pk1, pk2],
     },
   },
